@@ -1,0 +1,8 @@
+#!/bin/sh
+
+readonly nvim_dir="${HOME}/.config/nvim"
+mkdir -p "$HOME/.config"
+if [ ! -d "${nvim_dir}" ]; then
+    ln -s /nvim ~/.config/nvim
+fi
+exec nvim "$@"

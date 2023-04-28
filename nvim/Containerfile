@@ -1,0 +1,13 @@
+FROM alpine:edge
+
+RUN apk add git \
+            lazygit \
+            neovim \
+            neovim-doc \
+            ripgrep \
+            alpine-sdk --update &&\
+    git clone https://github.com/LazyVim/starter /nvim
+
+COPY nvim /nvim/
+
+ENTRYPOINT ["/nvim/nvim"]
