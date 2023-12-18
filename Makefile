@@ -19,3 +19,7 @@ build-nvim:
 start-nvim:
 	podman volume create --ignore nvim && \
 		podman run --rm -it -v nvim:/root -v .:/code:Z localhost/nvim:latest
+
+basic-nvim:
+        mkdir -p $HOME/.config/nvim && \
+                cp nvim/init.lua $HOME/.config/nvim
